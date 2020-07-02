@@ -10,11 +10,11 @@ int quefirst, quelast;
 };
 void inque(struct queue* q) //инициализация очереди
 {
-	q->quefirst = q;
+	q->quefirst = 1;
 	q->quelast = 0;
 	return;
 }
-void insert(struct queue* q, char x) //добавление в очередь
+void insert(struct queue* q, char x) //добавление в очередь.
 {
 	if (q->quelast < N - 1)
 	{
@@ -53,19 +53,6 @@ int removex(struct queue* q) {
 	q->quefirst++;
 	return x;
 }
-/*int removex(struct queue* q) {
-	int x, h;
-	if (isempty(q) == 1) {
-		printf("Очередь пуста!\n");
-		return 0;
-	}
-	x = q->que[q->quefirst];
-	for (h = q->quefirst; h < q->quelast; h++) {
-		q->que[h] = q->que[h + 1];
-	}
-	q->quelast--;
-	return x;
-}*/
 void main()
 {
 	/* int M;
